@@ -1,0 +1,27 @@
+#!/usr/bin/env ruby
+
+require 'uri'
+require 'net/http'
+require 'json'
+
+API_TOKEN=ENV["REDMINE_API_TOKEN"]
+
+def get_last_commit_message
+  `git log -1 HEAD --pretty=%B`
+end
+
+def add_comment_to_issue(issue_id, message)
+  uri = URI("https://rm.websecret.by/issues/#{issue_id}.json?key=#{API_TOKEN}")
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  req = Net::HTTP::Put.new(uri.request_uri, 'Content-Type' => 'application/json')
+  req.body = {issue: {notes: message}}.to_json
+  http.request(req)
+end
+
+commit = get_last_commit_message
+message = commit.lines[1..-1].join
+issue_id = commit[/\#(\d+)/, 1]
+
+add_comment_to_issue issue_id, message
+
