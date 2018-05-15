@@ -10,4 +10,4 @@ Post comment to a redmine issue. It extracts id of the linked issue from the las
 "refs #ISSUE_ID; ...".
 ```
 
-Also, you must set REDMINE_API_TOKEN environment variable.
+Also, you must set `REDMINE_API_TOKEN` environment variable.
