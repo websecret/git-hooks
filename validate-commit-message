@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+def get_commit_message
+  File.read ARGV[0]
+end
+
+def valid_commit_message?
+  get_commit_message.match? /refs #\d+.*/
+end
+
+unless valid_commit_message?
+  puts "Error! You need to specify issue ID, like: 'refs #1234'."
+  exit 1
+end
+
+exit 0
