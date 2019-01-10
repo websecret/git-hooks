@@ -11,3 +11,7 @@ Post comment to a redmine issue. It extracts id of the linked issue from the las
 ```
 
 Also, you must set `REDMINE_API_TOKEN` environment variable.
+
+## validate-commit-message
+
+`commit-msg` hook that validates commit message.
