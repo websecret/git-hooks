@@ -6,7 +6,7 @@ Git hooks we are using.
 
 `ruby 2.4.1+`
 
-## Example installation:
+## Installation example:
 
 ```
 git clone https://github.com/websecret/git-hooks /tmp/git-hooks
@@ -18,7 +18,7 @@ chmod +x .git/hooks/commit-msg
 
 type: `post-commit`
 
-Hook that post a comment to a redmine issue. It extracts id of the linked issue from the last commit message using next pattern:
+Hook that posts a comment to a redmine issue. It extracts id of the linked issue from the last commit message using next pattern:
 
 ```
 "refs #ISSUE_ID; ..."
