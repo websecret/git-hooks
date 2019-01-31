@@ -16,7 +16,9 @@ chmod +x .git/hooks/commit-msg
 
 ## post-redmine-comment
 
-Post comment to a redmine issue. It extracts id of the linked issue from the last commit message using next pattern:
+type: `post-commit`
+
+Hook that post a comment to a redmine issue. It extracts id of the linked issue from the last commit message using next pattern:
 
 ```
 "refs #ISSUE_ID; ..."
@@ -26,4 +28,6 @@ Also, you must set `REDMINE_API_TOKEN` environment variable.
 
 ## validate-commit-message
 
-`commit-msg` hook that validates commit message.
+type: `commit-msg`
+
+Hook that validates commit message.
