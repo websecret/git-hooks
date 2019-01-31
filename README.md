@@ -1,6 +1,18 @@
 # git-hooks
 
-Git hooks that we are using.
+Git hooks we are using.
+
+## Requirements
+
+`ruby 2.4.1+`
+
+## Example installation:
+
+```
+git clone https://github.com/websecret/git-hooks /tmp/git-hooks
+cp /tmp/git-hooks/validate-commit-message .git/hooks/commit-msg
+chmod +x .git/hooks/commit-msg
+```
 
 ## post-redmine-comment
 
